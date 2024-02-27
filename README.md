@@ -1,4 +1,4 @@
-## Why I choose this topic?
+## Why did I choose this topic?
 This project was undertaken as one of my initial mathematics projects at CSUN in 2020. I opted to focus on a credit card model due to the complexity and widespread use of credit scores, which are underpinned by such models. The credit score system intrigued me, as it plays a crucial role in financial decision-making processes worldwide. My curiosity was not only academic; I was also motivated by a personal interest in understanding the mechanics behind credit scores. This knowledge had the potential to offer insights into improving my own credit score, making the project both a learning opportunity and a practical exploration into enhancing personal financial health.
 
 ## 1. Introduction
@@ -31,3 +31,104 @@ The initial step involved analyzing the outcome data to identify patterns of loa
 #### Objective
 
 The aim is to craft a model that enables the bank to reliably predict the likelihood of loan repayment by prospective borrowers, thereby mitigating financial risk and enhancing decision-making processes.
+
+## 2. Data
+
+### 2.1 Outcome
+
+The initial dataset received from the bank consisted of 7,500 records concerning loan outcomes. For illustrative purposes, we will discuss only 40 of these outcomes. Due to the extensive and complex nature of the data, I employed a frequency table for simplification. Frequency tables significantly enhance data readability by condensing information. This approach transformed what would have been an overwhelming 7,500-line table into a succinct summary, demonstrating the utility of frequency tables in data analysis.
+
+### 2.1.1 Outcome and Age of Accounts
+
+To further analyze the data, I combined the variables of outcome and the age of accounts, applying frequency coding to aggregate instances with identical values. This method allowed for a concise representation of the data, making it easier to observe patterns. For example, one entry in the dataset showed an account age of 3 months with an outcome of zero, indicating the account did not fulfill the loan repayment.
+
+#### Table 1: Outcome
+
+| Outcome |
+|---------|
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 1       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 0       |
+| 0       |
+| 1       |
+| 1       |
+| 1       |
+| 0       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+| 0       |
+| 1       |
+
+#### Table 2: Frequency of Outcomes
+
+| Outcome | Amount |
+|---------|--------|
+| 0       | 2500   |
+| 1       | 5000   |
+
+#### Table 3: Outcome and Age of Accounts
+
+| Outcome | Age of Accounts | Group Count |
+|---------|-----------------|-------------|
+| 0       | 1-3             | 1           |
+| 0       | 3-1             | 1           |
+| 0       | 4-1             | 1           |
+| 0       | 5-3             | 1           |
+| 0       | 6-3             | 1           |
+| 1       | 0-1             | 1           |
+| 1       | 1-4             | 1           |
+| 1       | 2-4             | 1           |
+| 1       | 3-3             | 1           |
+| 1       | 4-2             | 1           |
+
+### 2.1.2 Sample Weight
+
+To manage the large dataset effectively while maintaining accuracy, I applied a technique known as sample weighting. This method allows for data reduction without distorting the underlying numerical relationships. For example, with an initial distribution of 5,000 '1' outcomes and 2,500 '0' outcomes, reducing the dataset to a total of 270 entries required careful balancing to reflect the original proportions. Employing sample weighting ensured that the reduced dataset accurately represented the original data's distribution.
+
+#### Table 4: Without Sample Weight
+
+| Outcome | Amount | Group Count |
+|---------|--------|-------------|
+| 1       | 0      | 1           |
+| 1       | 1      | 4           |
+| 1       | 2      | 4           |
+| 1       | 3      | 3           |
+
+#### Table 5: With Sample Weight
+
+| Outcome | Amount | Group Count |
+|---------|--------|-------------|
+| 1       | 0      | 7           |
+| 1       | 1      | 28          |
+| 1       | 2      | 28          |
+| 1       | 3      | 21          |
+| 1       | 4      | 14          |
+
+
