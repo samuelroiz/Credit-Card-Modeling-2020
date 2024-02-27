@@ -131,4 +131,118 @@ To manage the large dataset effectively while maintaining accuracy, I applied a 
 | 1       | 3      | 21          |
 | 1       | 4      | 14          |
 
+## 3. Graphs
+
+After compiling all the data, applying sample weights, and determining the frequency distribution, it's crucial to visualize this information through graphs. This step will help compare the different variables to identify the best fit.
+
+### 3.1 Age of Accounts
+
+**Figure 1: Noisy Age of Account (Months)**
+
+The graph initially appeared somewhat cluttered, displaying numerous spikes beyond the 170-month mark. These spikes, indicative of noise, obscured the clarity of the data presentation. To enhance accuracy and readability, I trimmed the maximum age range of the accounts, effectively reducing the noise.
+
+With the adjustments made, the graph's clarity significantly improved. It revealed that accounts aged around fifty months exhibit a higher likelihood of non-repayment by customers. However, this alone doesn't provide sufficient insight to make a decision on trustworthiness based on account age alone. Subsequent graphs will further aid in determining which customers are more likely to be reliable.
+
+### 3.2 Credit Card Balance to Loan Ratio
+
+**Figure 2: Age of Account (Months)**
+
+#### 3.1.1 Summary of Age of Accounts
+The summary of Age of Accounts suggests that the longer an account has been open, the lower the risk it poses to the bank. This is because a longer account history indicates consistent management and payment of dues. Conversely, newer accounts pose a higher risk due to their lack of established history, presenting greater uncertainty and potential loss for the bank.
+
+#### 3.2 Credit Card Balance to Loan Ratio
+
+A credit card consolidation loan consolidates multiple credit card debts into a single loan with a fixed interest rate and term. This strategy not only can reduce the overall interest paid but also streamline the debt repayment process.
+
+**Figure 3: Noisy Credit Card Balance to Loan Ratio**
+
+**Figure 4: Adjusted Credit Card Balance to Loan Ratio**
+
+After applying noise reduction techniques to the data, a clearer trend emerges, particularly around the 50% credit card balance to loan ratio mark. Here, we observe a spike indicating an increased likelihood (by at least 10%) of non-repayment. This insight is crucial for assessing risk and making informed lending decisions.
+
+#### 3.2.1 Summary of Credit Card Balance to Loan Ratio
+
+The analysis reveals that lower credit card balance to loan ratios are associated with decreased risk levels, starting from a baseline risk of 5%. However, as the ratio increases, so does the risk, reaching a notable increase of at least 10% once the ratio exceeds 32%. Beyond a 100% ratio, the risk escalates to 14% or more, highlighting the significant impact of this metric on creditworthiness.
+
+### 3.3 Auto Balance Ratio
+
+The Auto Balance Ratio is crucial for credit scoring as it reflects the proportion of available credit utilized. Best practices suggest keeping this ratio under 30%, as lower utilization rates are viewed more favorably.
+
+**Figure 5: Auto Balance Ratio**
+
+Lower auto balance ratios are typically associated with a higher likelihood of creditworthiness, as they indicate prudent credit management. Conversely, accounts exhibiting negative ratios (indicating no credit usage or maxed-out credit) are flagged as higher risk due to their potential financial instability.
+
+### 3.3 Auto Balance Ratio
+
+#### 3.3.1 Summary of Auto Balance Ratio
+The Auto Balance Ratio offers insights into the financial behavior of account holders. A positive auto-balance ratio indicates potential risk, whereas a negative ratio suggests minimal to no risk. Accounts with an auto-balance ratio between one and fifty represent a significant risk, with an estimated ten to twelve percent likelihood of default. However, compared to other variables, the Auto Balance Ratio is less reliable for predicting risk unless the ratio falls within this specific range.
+
+### 3.4 Number of Accounts
+
+**Figure 6: Noisy Number of Accounts**
+
+**Figure 7: Number of Accounts**
+
+#### 3.4.1 Summary of Number of Accounts
+The Number of Accounts a client holds can influence their credit risk profile. Generally, the risk associated with a client increases gradually with the number of accounts they have. This is attributed to the potential for increased financial obligations and the uncertainty surrounding the stability of these accounts. A client with fewer accounts is deemed less risky as they have fewer financial commitments. Risk levels start at five percent for clients with one to four accounts but escalate to twenty percent for those holding forty to forty-five accounts. Beyond forty-eight accounts, the risk is considered very high, partly due to the lack of sufficient data on accounts exceeding this number.
+
+### 3.5 Number of Accounts Ever 30 Days Past Due
+
+Accounts that have never been late on payments beyond thirty days exhibit only a four percent probability of default. However, as the frequency of late payments increases, so does the risk of default. The probability jumps dramatically from a four percent chance of default for accounts never late to a thirty-six percent chance for accounts that have been late nine times. This stark contrast underscores the significant impact of payment timeliness on credit risk assessment.
+
+### 3.6 Number of Accounts Ever 60 Days Past Due
+
+The graph illustrating the number of accounts ever sixty days past due shows a pattern similar to the thirty-day metric, albeit with significantly higher risk levels for each occurrence of late payment. The risk drops to zero for accounts late thirteen times, simply because there are no accounts with this number of late payments. It's crucial, however, to analyze the data for accounts 90 days past due before drawing definitive conclusions.
+
+**Figure 9: Number of Accounts 60 Days Past Due**
+
+### 3.7 Number of Accounts Ever 90 Days Past Due
+
+Accounts with nine instances of being 90 days past due exhibit a minimum risk of 25% for not repaying. For both sixty and ninety days past due, accounts with at least fourteen instances of late payments show a high probability, up to 100%, of default. This data underscores the significant role these variables play in assessing financial stability.
+
+**Figure 10: Number of Accounts 90 Days Past Due**
+
+#### 3.7.1 Summary of Accounts Ever Days Past Due
+
+This analysis reveals the predictive accuracy of Days Past Due (DPD) metrics. For 30 DPD, accounts with five or more instances of late payments are considered unreliable. Risk acceptance should not extend beyond 15 instances, as this represents an eighty percent increase in risk. For 60-day metrics, the risk begins at 5% with any late payment, advising against trust beyond zero occurrences. For those willing to accept risk, it is advisable not to exceed three instances, as this corresponds to a significant risk increase.
+
+### 3.8 Number of Inquiries Last 6 Months
+
+Credit inquiries significantly impact individuals with few accounts or a short credit history. Statistically, individuals with six or more inquiries on their credit reports are much more likely to declare bankruptcy than those with none. The associated graph demonstrates a steep increase in risk with the number of inquiries; a single inquiry starts with a seven percent risk, escalating dramatically with each additional inquiry.
+
+**Figure 11: Number of Inquiries Last 6 Months**
+
+### 3.9 Number of Inquiries Last 12 Months
+
+The trend for inquiries over the last twelve months mirrors that of the last six months, suggesting a high risk associated with multiple inquiries. The graph should ideally be limited to twelve accounts to reduce noise. Beyond twelve inquiries, the risk skyrockets to sixty percent.
+
+**Figure 12: Number of Inquiries Last 12 Months**
+
+#### 3.9.1 Summary of Inquiries
+
+The inquiry data provides a clear indication of high risk associated with multiple inquiries. A single inquiry poses at least a five percent risk, which significantly increases with each additional inquiry over six months. Over twelve months, the risk increases by ten percent for every six inquiries, with a dramatic forty percent increase observed beyond ten inquiries.
+
+### 3.10 Number of Mortgages
+
+**Figure 13: Number of Mortgages**
+
+#### 3.10.1 Summary of Number of Mortgages
+
+The risk associated with the number of mortgages starts at five percent and increases gradually with each additional mortgage, peaking at twenty-six percent. This trend indicates that individuals with multiple mortgages pose a higher risk to lenders, as they must manage multiple loan repayments concurrently. Fewer mortgages correlate with lower risk levels.
+
+## 4 Results
+
+This section reflects on the project's outcomes, challenges, and learning experiences.
+
+### 4.1 Interesting Findings
+
+Curve fitting is fascinating for its versatility in application and methodology. Despite its simplicity, mastering curve fitting can be challenging. This project highlighted the intriguing aspect of applying curve fitting to various scenarios, beyond conventional applications, making it an engaging and versatile tool.
+
+### 4.2 Challenges
+
+The project presented numerous challenges, starting with data collection. Managing a dataset with 7,500 accounts and 28 variables (totalling 210,000 data points) was daunting. Additionally, the application of frequency table codes and the integration of LaTeX formatting posed significant hurdles. Time management and efficient data processing were among the primary challenges faced during this project.
+
+### 4.3 Learnings
+
+The project was a valuable learning experience, offering insights into curve fitting and broader data analysis techniques. Understanding the methodology behind curve fitting has equipped me with skills applicable across various software and analytical tasks, emphasizing the importance of methodological knowledge over programming proficiency alone.
 
