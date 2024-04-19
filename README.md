@@ -1,46 +1,58 @@
 ## Why did I choose this topic?
 This project was undertaken as one of my initial mathematics projects at CSUN in 2020. I opted to focus on a credit card model due to the complexity and widespread use of credit scores, which are underpinned by such models. The credit score system intrigued me, as it plays a crucial role in financial decision-making processes worldwide. My curiosity was not only academic; I was also motivated by a personal interest in understanding the mechanics behind credit scores. This knowledge had the potential to offer insights into improving my own credit score, making the project both a learning opportunity and a practical exploration into enhancing personal financial health.
 
+# Contents
+
+## Introduction
+- **1.1 What is Curve Fitting**
+- **1.2 My Project Scenario**
+
+## Data
+- **2.1 Outcome**
+  - **2.1.1 Outcome and Age of Accounts**
+  - **2.1.2 Sample Weight**
+- **2.2 Full Table**
+
+## Graphs
+- **3.1 Age of Accounts**
+  - **3.1.1 Summary of Age of Accounts**
+- **3.2 Credit Card Balance to Loan**
+  - **3.2.1 Summary of Credit Card Balance to Loan**
+- **3.3 Auto Balance Ratio**
+  - **3.3.1 Summary of Auto Balance Ratio**
+- **3.4 Number of Accounts**
+  - **3.4.1 Summary of Number of Accounts**
+- **3.5 Number of Accounts Ever 30 Days Past Due**
+- **3.6 Number of Accounts Ever 60 Days Past Due**
+- **3.7 Number of Accounts Ever 90 Days Past Due**
+  - **3.7.1 Summary of Accounts Ever Days Past Due**
+- **3.8 Number of Inquiries Last 6 Months**
+- **3.9 Number of Inquiries Last 12 Months**
+  - **3.9.1 Summary of Inquiries**
+- **3.10 Number of Mortgages**
+  - **3.10.1 Summary of Number of Mortgages**
+
+## Results
+- **4.1 Interesting Observations**
+- **4.2 Challenges Encountered**
+- **4.3 Lessons Learned**
+
+## Data
+Data was obtained from people's accounts using random numbers. You are highly encouraged to visit [this website](http://www.wisc.edu/writing/Handbook/ScienceReport.html) for more information.
+
 ## 1. Introduction
-
 ### 1.1 What is Curve Fitting
-
-Curve fitting is a highly valuable and widely utilized analysis tool in software such as Matlab, Origin, Excel, among others. It is employed daily across various sectors including banking and scientific research. Curve fitting examines the relationship between one or more predictor variables and a response variable, aiming to define a "best fit" model of this relationship. Through analyzing this model, we can predict outcomes and discern which variables are more or less influential. For instance, consider working for a bank with 10 customers who have taken out loans and possess credit cards. If only 4 of these customers repaid their loans while the remaining 6 did not, the bank would be interested in identifying potential non-payers in the future. This involves analyzing customer data, such as the number of credit cards held, and the frequency of late payments beyond 30 days. These variables contribute to a curve fitting model that patterns trustworthy behaviors, aiding in the decision-making process.
+Curve fitting is one of the most widely used analytical tools in applications such as Matlab, Origin, Excel, etc. It examines the relationship between one or more predictors and a response variable with the goal of identifying a "best fit" model. This model helps us predict and determine which variables are more or less effective. For instance, suppose I work for a bank with 10 customers who have taken out loans and own credit cards; only 4 of these customers repaid their loans. The bank needs to identify which customers are less likely to repay their loans. By analyzing variables such as the number of credit cards held and frequency of late payments beyond 30 days, we can develop a curve-fitting model to identify trustworthy customers.
 
 ### 1.2 My Project Scenario
+A bank asked me to develop a model to help determine the trustworthiness of loan applicants. The data provided was extensive and disorganized, necessitating significant cleanup and the creation of multiple variables. The primary variables I used included the outcome, Age of Account, Credit Card Balance to Loan, Auto Balance Ratio, Number of Accounts, Number of Accounts Ever 30 Days Past Due, Number of Accounts Ever 60 Days Past Due, Number of Accounts Ever 90 Days Past Due, Number of Inquiries Last 6 Months, and Number of Inquiries Last 12 Months. The first step was to analyze the outcome, which represented the number of people who did and did not repay their loans. To model these scenarios, I utilized examples from credit card data models and wrote a code to generate random numbers.
 
-#### Background
-
-A bank approached me with a request to develop a model that could assist in determining the trustworthiness of loan applicants. The provided data encompassing account details was complex and required extensive cleaning.
-
-#### Data Cleaning and Variable Selection
-
-To refine the data, I established several key variables:
-
-- **Outcome**: The primary indicator, representing the dichotomy of customers who have fulfilled or failed their loan obligations.
-- **Age of Account**: The duration since the account was opened.
-- **Credit Card Balance to Loan Ratio**: The proportion of credit card debt relative to the loan amount.
-- **Auto Balance Ratio**: The ratio of auto loan balances to the total loan amount.
-- **Number of Accounts**: The total accounts held by a customer.
-- **Accounts Past Due**: This includes several variables indicating the number of accounts 30, 60, and 90 days past due.
-- **Number of Inquiries**: The frequency of credit inquiries within the last 6 and 12 months.
-- **Number of Mortgages**: The count of mortgage accounts.
-
-The initial step involved analyzing the outcome data to identify patterns of loan repayment. Subsequently, I sought out credit card model data for reference and generated random numbers to simulate a realistic scenario.
-
-#### Objective
-
-The aim is to craft a model that enables the bank to reliably predict the likelihood of loan repayment by prospective borrowers, thereby mitigating financial risk and enhancing decision-making processes.
-
-## 2. Data
-
+## 2. Data Analysis
 ### 2.1 Outcome
+The initial data set received from the bank included outcomes for 7,500 accounts, but it was presented in a very cluttered format. I employed a frequency table to simplify this data, reducing thousands of lines into a more manageable two-line representation.
 
-The initial dataset received from the bank consisted of 7,500 records concerning loan outcomes. For illustrative purposes, we will discuss only 40 of these outcomes. Due to the extensive and complex nature of the data, I employed a frequency table for simplification. Frequency tables significantly enhance data readability by condensing information. This approach transformed what would have been an overwhelming 7,500-line table into a succinct summary, demonstrating the utility of frequency tables in data analysis.
-
-### 2.1.1 Outcome and Age of Accounts
-
-To further analyze the data, I combined the variables of outcome and the age of accounts, applying frequency coding to aggregate instances with identical values. This method allowed for a concise representation of the data, making it easier to observe patterns. For example, one entry in the dataset showed an account age of 3 months with an outcome of zero, indicating the account did not fulfill the loan repayment.
+#### 2.1.1 Outcome and Age of Accounts
+This summary table combines the variables of outcome and age of accounts. Applying a frequency code helped to identify patterns, such as the correlation between younger accounts (3 months old) and non-payment. For example, there was one account that had an outcome of zero (non-payment) and was only three months old.
 
 #### Table 1: Outcome
 
@@ -86,163 +98,113 @@ To further analyze the data, I combined the variables of outcome and the age of 
 | 0       |
 | 1       |
 
-#### Table 2: Frequency of Outcomes
+![Frequency of Outcomes](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/table-2-credit-card-modeling.jpg?raw=true)
 
-| Outcome | Amount |
-|---------|--------|
-| 0       | 2500   |
-| 1       | 5000   |
 
-#### Table 3: Outcome and Age of Accounts
+![Outcome and Age of Accounts](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/table-3-credit-card-modeling.jpg?raw=true)
 
-| Outcome | Age of Accounts | Group Count |
-|---------|-----------------|-------------|
-| 0       | 1-3             | 1           |
-| 0       | 3-1             | 1           |
-| 0       | 4-1             | 1           |
-| 0       | 5-3             | 1           |
-| 0       | 6-3             | 1           |
-| 1       | 0-1             | 1           |
-| 1       | 1-4             | 1           |
-| 1       | 2-4             | 1           |
-| 1       | 3-3             | 1           |
-| 1       | 4-2             | 1           |
+#### 2.1.2 Sample Weight
+Since my dataset is large, I need to reduce it. However, reducing the data can skew the results. To maintain accuracy, I use a sample weight, which helps preserve the original ratio of the data. For instance, in the original dataset, there are 5,000 'ones' and 2,500 'zeros', indicating more 'ones' than 'zeros'. If I reduce the dataset to a total of 270 entries, I would adjust it to have an equal number of 'ones' and 'zeros', both at 85, with a sample weight of 7 applied only to the 'ones'. This means that when generating a table of outcomes for 'ones', I multiply the variables by 7 to reflect their true proportion in the original data.
 
-### 2.1.2 Sample Weight
+![Without Sample Weight](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/table-4-credit-card-modeling.jpg?raw=true)
 
-To manage the large dataset effectively while maintaining accuracy, I applied a technique known as sample weighting. This method allows for data reduction without distorting the underlying numerical relationships. For example, with an initial distribution of 5,000 '1' outcomes and 2,500 '0' outcomes, reducing the dataset to a total of 270 entries required careful balancing to reflect the original proportions. Employing sample weighting ensured that the reduced dataset accurately represented the original data's distribution.
+![With Sample Weight](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/table-5-credit-card-modeling.jpg?raw=true)
 
-#### Table 4: Without Sample Weight
+#### 2.2 Full Table
+We have data on over twenty-eight variables. Below is a summary of the full table that we compiled from the bank data.
 
-| Outcome | Amount | Group Count |
-|---------|--------|-------------|
-| 1       | 0      | 1           |
-| 1       | 1      | 4           |
-| 1       | 2      | 4           |
-| 1       | 3      | 3           |
+![Full Table](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/table-6-credit-card-modeling.jpg?raw=true)
 
-#### Table 5: With Sample Weight
-
-| Outcome | Amount | Group Count |
-|---------|--------|-------------|
-| 1       | 0      | 7           |
-| 1       | 1      | 28          |
-| 1       | 2      | 28          |
-| 1       | 3      | 21          |
-| 1       | 4      | 14          |
+![Full Table](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/table-7-credit-card-modeling.jpg?raw=true)
 
 ## 3. Graphs
-
-After compiling all the data, applying sample weights, and determining the frequency distribution, it's crucial to visualize this information through graphs. This step will help compare the different variables to identify the best fit.
+Since I have gathered all of my data, applied sample weights, and executed frequency distribution analyses, I now need to create graphs to compare the variables and identify the best fit.
 
 ### 3.1 Age of Accounts
+![Noisy Age of Account in month](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-1-credit-card-modeling.jpg?raw=true)
 
-**Figure 1: Noisy Age of Account (Months)**
+The graph, as you can see above, is somewhat messy. It displays numerous spikes after 170 months, which are typically considered noise. To improve clarity and accuracy, I need to trim down the maximum range of the age of accounts.
 
-The graph initially appeared somewhat cluttered, displaying numerous spikes beyond the 170-month mark. These spikes, indicative of noise, obscured the clarity of the data presentation. To enhance accuracy and readability, I trimmed the maximum age range of the accounts, effectively reducing the noise.
+After reducing the spikes, the graph becomes clearer. This graph indicates that accounts at fifty months have a higher probability of defaulting. However, this information alone is insufficient to determine trustworthiness based solely on the age of accounts. The subsequent graphs will provide further insights to help determine whom we can trust.
 
-With the adjustments made, the graph's clarity significantly improved. It revealed that accounts aged around fifty months exhibit a higher likelihood of non-repayment by customers. However, this alone doesn't provide sufficient insight to make a decision on trustworthiness based on account age alone. Subsequent graphs will further aid in determining which customers are more likely to be reliable.
+![Age of Accounts](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-2-credit-card-modeling.jpg?raw=true)
+### 3.1.1 Summary of Age of Accounts
+The age of an account significantly impacts the risk profile presented to the bank. Older accounts demonstrate reliability and present less risk as they have a history of being in good standing and making payments on time. Conversely, younger accounts pose a higher risk as they have less history and the account holders have less to lose, making the potential for default higher.
 
-### 3.2 Credit Card Balance to Loan Ratio
+### 3.2 Credit Card Balance to Loan
+Credit card consolidation loans allow individuals to combine several credit card debts into a single loan with a fixed interest rate and term, potentially saving money and simplifying debt repayment.
 
-**Figure 2: Age of Account (Months)**
+**Figure 3:** Shows a trend where accounts with at least a fifty percent credit card balance to loan ratio exhibit a higher likelihood of non-payment, increasing by at least ten percent. Noise reduction is necessary for clearer analysis.
 
-#### 3.1.1 Summary of Age of Accounts
-The summary of Age of Accounts suggests that the longer an account has been open, the lower the risk it poses to the bank. This is because a longer account history indicates consistent management and payment of dues. Conversely, newer accounts pose a higher risk due to their lack of established history, presenting greater uncertainty and potential loss for the bank.
-
-#### 3.2 Credit Card Balance to Loan Ratio
-
-A credit card consolidation loan consolidates multiple credit card debts into a single loan with a fixed interest rate and term. This strategy not only can reduce the overall interest paid but also streamline the debt repayment process.
-
-**Figure 3: Noisy Credit Card Balance to Loan Ratio**
-
-**Figure 4: Adjusted Credit Card Balance to Loan Ratio**
-
-After applying noise reduction techniques to the data, a clearer trend emerges, particularly around the 50% credit card balance to loan ratio mark. Here, we observe a spike indicating an increased likelihood (by at least 10%) of non-repayment. This insight is crucial for assessing risk and making informed lending decisions.
-
-#### 3.2.1 Summary of Credit Card Balance to Loan Ratio
-
-The analysis reveals that lower credit card balance to loan ratios are associated with decreased risk levels, starting from a baseline risk of 5%. However, as the ratio increases, so does the risk, reaching a notable increase of at least 10% once the ratio exceeds 32%. Beyond a 100% ratio, the risk escalates to 14% or more, highlighting the significant impact of this metric on creditworthiness.
+**Figure 4:** After noise reduction, the data becomes more accurate and provides a reliable indication of which accounts are at risk.
+![Noisy Credit Card Balance to Loan](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-3-credit-card-modeling.jpg?raw=true)
+![Credit Card Balance to Loan](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-4-credit-card-modeling.jpg?raw=true)
+#### 3.2.1 Summary of Credit Card Balance to Loan
+The risk associated with the credit card balance to loan ratio starts at five percent and increases progressively. As the ratio rises, so does the risk, peaking at fourteen percent once it exceeds a hundred percent. This incremental rise underscores the need for careful monitoring of this ratio.
 
 ### 3.3 Auto Balance Ratio
+This metric is crucial as it informs credit scoring agencies about the percentage of available credit utilized by an individual. Best practices recommend using no more than 30 percent of your credit limits to maintain good credit health.
 
-The Auto Balance Ratio is crucial for credit scoring as it reflects the proportion of available credit utilized. Best practices suggest keeping this ratio under 30%, as lower utilization rates are viewed more favorably.
+**Figure 5:** Illustrates that accounts with lower auto balance ratios are considered riskier. Accounts with negative ratios indicate no credit usage and maximum credit availability, which is viewed as a lower risk.
 
-**Figure 5: Auto Balance Ratio**
-
-Lower auto balance ratios are typically associated with a higher likelihood of creditworthiness, as they indicate prudent credit management. Conversely, accounts exhibiting negative ratios (indicating no credit usage or maxed-out credit) are flagged as higher risk due to their potential financial instability.
-
-### 3.3 Auto Balance Ratio
-
+![Auto Balance Ratio](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-5-credit-card-modeling.jpg?raw=true)
 #### 3.3.1 Summary of Auto Balance Ratio
-The Auto Balance Ratio offers insights into the financial behavior of account holders. A positive auto-balance ratio indicates potential risk, whereas a negative ratio suggests minimal to no risk. Accounts with an auto-balance ratio between one and fifty represent a significant risk, with an estimated ten to twelve percent likelihood of default. However, compared to other variables, the Auto Balance Ratio is less reliable for predicting risk unless the ratio falls within this specific range.
+The auto balance ratio is a significant risk indicator. Accounts with a positive ratio are considered risky, particularly those with ratios between one to fifty, which are deemed to have a risk of ten to twelve percent. However, compared to other variables, the auto balance ratio is not the most reliable risk predictor unless the ratio falls within this specific range.
 
-### 3.4 Number of Accounts
+#### 3.4 Number Accounts
+The number of accounts represents how many accounts the client has with banks. We will examine if the number of accounts influences the likelihood of the client repaying the loan. The first graph (Figure 6) is quite noisy towards the end, indicating that the noise needs to be suppressed for clearer analysis. The second graph is much clearer. Accounts ranging from forty to forty-five exhibit a higher risk compared to others. Although all have at least a five percent probability of default, the risk significantly increases by three percent for every ten additional accounts.
 
-**Figure 6: Noisy Number of Accounts**
+![Number of Accounts](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-6-credit-card-modeling.jpg?raw=true)
 
-**Figure 7: Number of Accounts**
-
+![Number Accounts](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-7-credit-card-modeling.jpg?raw=true)
 #### 3.4.1 Summary of Number of Accounts
-The Number of Accounts a client holds can influence their credit risk profile. Generally, the risk associated with a client increases gradually with the number of accounts they have. This is attributed to the potential for increased financial obligations and the uncertainty surrounding the stability of these accounts. A client with fewer accounts is deemed less risky as they have fewer financial commitments. Risk levels start at five percent for clients with one to four accounts but escalate to twenty percent for those holding forty to forty-five accounts. Beyond forty-eight accounts, the risk is considered very high, partly due to the lack of sufficient data on accounts exceeding this number.
+The summary of the Number of Accounts indicates that the more accounts a client holds, the slower the risk increases. This gradual increase is due to the added responsibilities associated with managing multiple accounts, and the uncertainty regarding their stability. Conversely, the fewer accounts a client has, the more risk the bank can assume, as the client has fewer financial obligations that could impact their financial stability. The risk starts at five percent for one to four accounts, climbs to twenty percent for forty to forty-five accounts, and reaches an even higher risk level of twenty to forty-eight percent. Beyond fifty accounts, the risk becomes very high due to insufficient data on such accounts.
 
 ### 3.5 Number of Accounts Ever 30 Days Past Due
+The Number of Accounts Ever 30 Days Past Due metric reflects how often accounts have been late with payments by more than 30 days. Accounts with zero late payments post a low default risk of only four percent. However, as the frequency of late payments increases, so does the probability of default. For example, an account that has been late nine times shows a dramatically higher default probability of thirty-six percent, underscoring the significant impact that payment history has on credit risk.
 
-Accounts that have never been late on payments beyond thirty days exhibit only a four percent probability of default. However, as the frequency of late payments increases, so does the risk of default. The probability jumps dramatically from a four percent chance of default for accounts never late to a thirty-six percent chance for accounts that have been late nine times. This stark contrast underscores the significant impact of payment timeliness on credit risk assessment.
+![Number of Acc. 30 Days Past Due](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-8-credit-card-modeling.jpg?raw=true)
 
 ### 3.6 Number of Accounts Ever 60 Days Past Due
+The graph for the Number of Accounts Ever 60 Days Past Due is similar to that for 30 days but shows a significantly higher risk as the frequency of late payments increases. Notably, the risk drops to zero because no account has been late thirteen times. However, it's crucial to also consider the data for 90 days past due for a complete assessment.
 
-The graph illustrating the number of accounts ever sixty days past due shows a pattern similar to the thirty-day metric, albeit with significantly higher risk levels for each occurrence of late payment. The risk drops to zero for accounts late thirteen times, simply because there are no accounts with this number of late payments. It's crucial, however, to analyze the data for accounts 90 days past due before drawing definitive conclusions.
-
-**Figure 9: Number of Accounts 60 Days Past Due**
+![Number of Acc. 60 Days Past Due](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-9-credit-card-modeling.jpg?raw=true)
 
 ### 3.7 Number of Accounts Ever 90 Days Past Due
-
-Accounts with nine instances of being 90 days past due exhibit a minimum risk of 25% for not repaying. For both sixty and ninety days past due, accounts with at least fourteen instances of late payments show a high probability, up to 100%, of default. This data underscores the significant role these variables play in assessing financial stability.
-
-**Figure 10: Number of Accounts 90 Days Past Due**
-
+Similarly, for accounts that have been past due for ninety days, if an account has nine past due incidences, the risk of non-payment is at least twenty-five percent. For those that have been late fourteen times or more, the probability of default escalates dramatically, reaching up to one hundred percent. These metrics are crucial for determining financial stability.
+![Number of Acc. 90 Days Past Due](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-10-credit-card-modeling.jpg?raw=true)
 #### 3.7.1 Summary of Accounts Ever Days Past Due
-
-This analysis reveals the predictive accuracy of Days Past Due (DPD) metrics. For 30 DPD, accounts with five or more instances of late payments are considered unreliable. Risk acceptance should not extend beyond 15 instances, as this represents an eighty percent increase in risk. For 60-day metrics, the risk begins at 5% with any late payment, advising against trust beyond zero occurrences. For those willing to accept risk, it is advisable not to exceed three instances, as this corresponds to a significant risk increase.
+Analyzing the Days Past Due (DPD) data, the risk assessment for 30 DPD advises against trusting any clients with more than five late payments; the risk jumps significantly after fifteen late payments, reaching an eighty percent increase in risk. For 60 days, the principle remains, but with fewer occurrences: no trust should be extended beyond zero late payments, as even one instance raises the risk by five percent, escalating to seventeen percent at three late payments.
 
 ### 3.8 Number of Inquiries Last 6 Months
+Credit inquiries can significantly impact those with few accounts or a short credit history. Statistically, individuals with six or more inquiries on their credit reports are much more likely to declare bankruptcy than those with no inquiries. The risk associated with inquiries is substantial: starting at seven percent with one inquiry and skyrocketing to thirty percent with just six additional inquiries.
 
-Credit inquiries significantly impact individuals with few accounts or a short credit history. Statistically, individuals with six or more inquiries on their credit reports are much more likely to declare bankruptcy than those with none. The associated graph demonstrates a steep increase in risk with the number of inquiries; a single inquiry starts with a seven percent risk, escalating dramatically with each additional inquiry.
-
-**Figure 11: Number of Inquiries Last 6 Months**
+![Number Inquiries Last 6 months](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-11-credit-card-modeling.jpg?raw=true)
 
 ### 3.9 Number of Inquiries Last 12 Months
+The pattern for the last 12 months of inquiries mirrors that of the last six months. The graph should be refined to focus only on the first twelve accounts to minimize noise and enhance clarity. However, once an account has been late twelve times, the associated risk soars to a staggering sixty percent.
 
-The trend for inquiries over the last twelve months mirrors that of the last six months, suggesting a high risk associated with multiple inquiries. The graph should ideally be limited to twelve accounts to reduce noise. Beyond twelve inquiries, the risk skyrockets to sixty percent.
-
-**Figure 12: Number of Inquiries Last 12 Months**
+![Figure 12](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-12-credit-card-modeling.jpg?raw=true)
 
 #### 3.9.1 Summary of Inquiries
-
-The inquiry data provides a clear indication of high risk associated with multiple inquiries. A single inquiry poses at least a five percent risk, which significantly increases with each additional inquiry over six months. Over twelve months, the risk increases by ten percent for every six inquiries, with a dramatic forty percent increase observed beyond ten inquiries.
+The summary of these two inquiry variables shows it is highly accurate in identifying clients who pose a significant risk. It is evident that we must exercise caution with even a single inquiry, where the risk starts at five percent. The risk then increases drastically by three percent every six months. Over twelve months, the risk rises by ten percent for every six inquiries, reaching a forty percent increase when there are ten inquiries.
 
 ### 3.10 Number of Mortgages
 
-**Figure 13: Number of Mortgages**
+![Number of Mortgages](https://github.com/samuelroiz/Credit-Card-Modeling-2020/blob/main/images/figure-13-credit-card-modeling.jpg?raw=true)
 
 #### 3.10.1 Summary of Number of Mortgages
-
-The risk associated with the number of mortgages starts at five percent and increases gradually with each additional mortgage, peaking at twenty-six percent. This trend indicates that individuals with multiple mortgages pose a higher risk to lenders, as they must manage multiple loan repayments concurrently. Fewer mortgages correlate with lower risk levels.
+The risk associated with the number of mortgages starts at five percent and increases gradually up to twenty-six percent. It is clear that the more mortgages an account holds, the higher the financial risk to the bank. This is because with each additional mortgage, the account holder has more loans to repay, increasing their financial burden. Conversely, fewer mortgages mean less risk.
 
 ## 4 Results
+In this section, I will discuss my thoughts on the project, including the challenges, the fun aspects, and the mistakes encountered.
 
-This section reflects on the project's outcomes, challenges, and learning experiences.
-
-### 4.1 Interesting Findings
-
-Curve fitting is fascinating for its versatility in application and methodology. Despite its simplicity, mastering curve fitting can be challenging. This project highlighted the intriguing aspect of applying curve fitting to various scenarios, beyond conventional applications, making it an engaging and versatile tool.
+### 4.1 Interesting
+What is fascinating about curve fitting is the variety of ways it can be applied. As long as the data and tables are correctly managed, you can adapt the method to fit different scenarios. Curve fitting is a compelling method; it appears simple yet can be quite complex to execute. The process is lengthy, and I found it particularly interesting because I am accustomed to producing graphs quickly. It is also versatile, allowing applications in diverse scenarios, such as estimating the number of people who consume eggs. This flexibility makes it an enjoyable and exploratory method.
 
 ### 4.2 Challenges
+I faced numerous challenges. The first was knowing where to start, as graphing is impossible without data. Organizing the data was the most challenging part because with 7,500 accounts and 28 variables (totaling 210,000 data points), it was overwhelming initially. Applying the frequency table code also proved difficult as I couldn't figure out how to use the `tabulate()` function properly and had to find an alternative method. Time was another significant challenge; I often chose less efficient methods when quicker options were available. Additionally, learning to use LaTeX was tricky, especially in managing the order of figures, which tended to move around in the document. I had to use the `\float barrier` to prevent this.
 
-The project presented numerous challenges, starting with data collection. Managing a dataset with 7,500 accounts and 28 variables (totalling 210,000 data points) was daunting. Additionally, the application of frequency table codes and the integration of LaTeX formatting posed significant hurdles. Time management and efficient data processing were among the primary challenges faced during this project.
-
-### 4.3 Learnings
-
-The project was a valuable learning experience, offering insights into curve fitting and broader data analysis techniques. Understanding the methodology behind curve fitting has equipped me with skills applicable across various software and analytical tasks, emphasizing the importance of methodological knowledge over programming proficiency alone.
+### 4.3 Learned
+I am proud of what I've learned from this project. While I enhanced my curve fitting skills, I also acquired many valuable techniques applicable beyond using MATLAB. If asked to apply curve fitting in another software, I am confident in starting immediately due to my solid understanding of the basics. Knowing the method is crucial before learning the software; understanding the theoretical foundation helps make the practical application more intuitive. This project reinforced my appreciation for MATLAB's straightforward, understandable approach.
 
